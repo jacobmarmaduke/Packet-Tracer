@@ -1,0 +1,31 @@
+# Cisco Packet Tracer – DHCP Configuration
+
+## Router 1 Configuration
+
+en
+conf t
+
+int g0/0
+  ip address 192.168.10.1 255.255.255.0
+  no shutdown
+exit
+
+int g0/1
+  ip address 192.168.20.1 255.255.255.0
+  no shutdown
+exit
+
+ip dhcp excluded-address 192.168.10.1 192.168.10.10
+ip dhcp excluded-address 192.168.20.1 192.168.20.10
+
+
+ip dhcp pool LAN1
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.1
+ dns-server 8.8.8.8
+
+ip dhcp pool LAN2
+ network 192.168.20.0 255.255.255.0
+ default-router 192.168.20.1
+ dns-server 8.8.8.8
+
