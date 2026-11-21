@@ -1,0 +1,28 @@
+# Cisco Packet Tracer – HSRP-Configuration
+
+## Router 1 Configuration
+
+en
+conf t
+
+int g0/1
+  ip address 192.168.10.2 255.255.255.0
+  standby 1 ip 192.168.10.1
+  standby 1 priority 110
+  standby 1 preempt
+  no shutdown
+exit
+
+
+## Router 2 Configuration
+
+en
+conf t
+
+int g0/1
+  ip address 192.168.10.3 255.255.255.0
+  standby 1 ip 192.168.10.1
+  standby 1 priority 100
+  no shutdown
+exit
+
