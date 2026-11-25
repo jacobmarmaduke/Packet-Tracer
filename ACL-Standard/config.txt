@@ -1,0 +1,27 @@
+# Cisco Packet Tracer – ACL(Standard) Configuration
+
+## Router 1 Configuration
+
+en
+conf t
+
+int g0/0
+  ip address 192.168.10.1 255.255.255.0
+  no shutdown
+exit
+
+int g0/1
+  ip address 192.168.20.1 255.255.255.0
+  no shutdown
+exit
+
+
+
+access-list 1 deny host 192.168.20.11
+access-list 1 permit any
+
+
+
+int g0/1
+  ip access-group 1 in
+end
