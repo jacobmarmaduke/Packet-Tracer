@@ -1,0 +1,21 @@
+# Cisco Packet Tracer – EtherChannel Configuration
+
+## Switch 1 Configuration
+
+en
+conf t
+
+int range fa0/23-24
+  channel-group 1 mode active
+end
+
+
+## Switch 2 Configuration
+
+en
+conf t
+
+int range fa0/23-24
+  channel-group 1 mode active
+end
+
