@@ -15,10 +15,11 @@ int g0/1
   no shutdown
 exit
 
+(**Create Range of Excluded Address**)
 ip dhcp excluded-address 192.168.10.1 192.168.10.10
 ip dhcp excluded-address 192.168.20.1 192.168.20.10
 
-
+(**Create the DHCP POOLs**)
 ip dhcp pool LAN1
  network 192.168.10.0 255.255.255.0
  default-router 192.168.10.1
