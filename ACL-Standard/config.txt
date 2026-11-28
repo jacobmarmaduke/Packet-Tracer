@@ -15,13 +15,11 @@ int g0/1
   no shutdown
 exit
 
-
-
+(**Create ACL**)
 access-list 1 deny host 192.168.20.11
 access-list 1 permit any
 
-
-
+(**Apply ACL**)
 int g0/1
   ip access-group 1 in
 end
